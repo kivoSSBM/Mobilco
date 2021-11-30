@@ -120,3 +120,8 @@ app/src/test/java/com/example/fitlane/ExampleUnitTest.kt
 gradle/wrapper/gradle-wrapper.properties
 local.properties
 .gradle/buildOutputCleanup/buildOutputCleanup.lock
+local.properties
+.gradle/buildOutputCleanup/buildOutputCleanup.lock
+.gradle/buildOutputCleanup/outputFiles.bin
+.gradle/checksums/checksums.lock
+.idea/misc.xml

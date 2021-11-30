@@ -51,6 +51,13 @@ local.properties
 .idea/modules.xml
 .idea/scopes/scope_settings.xml
 .idea/vcs.xml
+.gradle/buildOutputCleanup/buildOutputCleanup.lock
+.gradle/buildOutputCleanup/outputFiles.bin
+.gradle/checksums/checksums.lock
+local.properties
+
+
+local.properties
 *.iml
 
 # OS-specific files

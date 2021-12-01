@@ -54,11 +54,11 @@ local.properties
 .gradle/buildOutputCleanup/buildOutputCleanup.lock
 .gradle/buildOutputCleanup/outputFiles.bin
 .gradle/checksums/checksums.lock
+local.properties
 
-*.properties
+
+local.properties
 *.iml
-android/local.properties
-.android/local.properties
 
 # OS-specific files
 .DS_Store

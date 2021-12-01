@@ -54,10 +54,8 @@ local.properties
 .gradle/buildOutputCleanup/buildOutputCleanup.lock
 .gradle/buildOutputCleanup/outputFiles.bin
 .gradle/checksums/checksums.lock
-local.properties
 
-
-local.properties
+*.properties
 *.iml
 
 # OS-specific files

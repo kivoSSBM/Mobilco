@@ -57,6 +57,8 @@ local.properties
 
 *.properties
 *.iml
+android/local.properties
+.android/local.properties
 
 # OS-specific files
 .DS_Store

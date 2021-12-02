@@ -9,4 +9,22 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+
+
+
+    <!--  Log in stuff-->
+
+    <string name="login_textbox">Simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum has been the industry"&apos;"s standard dummy text ever since the 1500s.</string>
+
+    <string name="email_hint">Enter Email</string>
+    <string name="password_hint">Enter Password</string>
+    <string name="Or">Or</string>
+
+    <string name="link_to_forgor"><a href="https://www.google.com/">Forgot Password?</a></string>
+    <string name="link_to_sign_up"><a href="https://www.google.com/">Sign Up</a></string>
+    <string name="skip">Skip</string>
+
+
 </resources>

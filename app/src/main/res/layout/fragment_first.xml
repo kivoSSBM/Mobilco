@@ -18,7 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/login_textbox"
-            android:textSize="24dp"
+            android:textSize="24sp"
             android:layout_gravity="center"
             android:layout_marginTop = "200dp"/>
 
@@ -41,7 +41,6 @@
             android:inputType="textPassword"
             android:hint="@string/password_hint"
             android:layout_marginTop = "5dp"/>
-
 
 
         <TextView
@@ -76,27 +75,27 @@
 
         android:orientation="horizontal"
         android:gravity="center"
-        android:layout_marginTop="200dp">
+        android:layout_marginTop="150dp">
 
 
-    <Button
-        android:id="@+id/Skip"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|start"
-        android:layout_marginEnd="200dp"
-        android:ems="5"
-        android:text="@string/skip" />
+        <Button
+            android:id="@+id/Skip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
 
-    <Button
-        android:id="@+id/login"
+            android:layout_marginEnd="200dp"
+            android:ems="5"
+            android:text="@string/skip" />
 
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="5"
+        <Button
+            android:id="@+id/login"
 
-        android:layout_gravity="bottom|end"
-        android:text="@string/login" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="5"
+
+
+            android:text="@string/login" />
 
 
     </LinearLayout>

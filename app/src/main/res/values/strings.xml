@@ -15,7 +15,7 @@
 
     <!--  Log in stuff-->
 
-    <string name="login_textbox">Welcome! please Log in or Sign up.</string>
+    <string name="login_textbox">Welcome! Please Log in or Sign up.</string>
 
     <string name="email_hint">Enter Email</string>
     <string name="password_hint">Enter Password</string>

@@ -11,8 +11,6 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 
 
-
-
     <!--  Log in stuff-->
 
     <string name="login_textbox">Welcome! Please Log in or Sign up.</string>
@@ -25,6 +23,8 @@
     <string name="link_to_sign_up"><a href="https://www.google.com/">Sign Up</a></string>
     <string name="skip">Skip</string>
     <string name="login">Log In</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>

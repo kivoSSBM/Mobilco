@@ -15,8 +15,7 @@
 
     <!--  Log in stuff-->
 
-    <string name="login_textbox">Simply dummy text of the printing and typesetting industry.
-        Lorem Ipsum has been the industry"&apos;"s standard dummy text ever since the 1500s.</string>
+    <string name="login_textbox">Welcome! please Log in or Sign up.</string>
 
     <string name="email_hint">Enter Email</string>
     <string name="password_hint">Enter Password</string>
@@ -25,6 +24,7 @@
     <string name="link_to_forgor"><a href="https://www.google.com/">Forgot Password?</a></string>
     <string name="link_to_sign_up"><a href="https://www.google.com/">Sign Up</a></string>
     <string name="skip">Skip</string>
+    <string name="login">Log In</string>
 
 
 </resources>

@@ -43,6 +43,5 @@
         android:scaleY="5"
         android:src="@drawable/ic_settings"
         tools:ignore="SpeakableTextPresentCheck" />
-
-    <include layout="@layout/activity_bottom_navbar" />
+    
 </LinearLayout>

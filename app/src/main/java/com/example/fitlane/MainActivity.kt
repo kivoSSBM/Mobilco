@@ -36,7 +36,9 @@ class MainActivity : AppCompatActivity() {
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
         }
-        setContentView(R.layout.meal_search_bar)
+
+        /* setContentView(R.layout.create_meal)
+
         val search = findViewById<SearchView>(R.id.searchView)
         val listView = findViewById<ListView>(R.id.listView)
 
@@ -66,7 +68,7 @@ class MainActivity : AppCompatActivity() {
                 return false
             }
 
-        })
+        }) */
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

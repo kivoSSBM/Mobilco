@@ -9,6 +9,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="splash_color">#FFFFFFFF</color>
 
+    <color name="orange">#FFFAAA00</color>
+
     <color name="grey">#FFE4E4E4</color>
     <color name="darkgrey">#FFC4C4C4</color>
     <color name="ligthdark">#FF000000</color>

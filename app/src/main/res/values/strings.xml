@@ -14,9 +14,10 @@
     <!--  Log in stuff-->
 
     <string name="login_textbox">Welcome! Please Log in or Sign up.</string>
-
-    <string name="email_hint">Enter Email</string>
-    <string name="password_hint">Enter Password</string>
+    <string name="email_title">Enter Email</string>
+    <string name="email_hint">abc@example.com</string>
+    <string name="password_title">Enter Password</string>
+    <string name="password_hint">Password</string>
     <string name="Or">Or</string>
 
     <string name="link_to_forgor"><a href="https://www.google.com/">Forgot Password?</a></string>

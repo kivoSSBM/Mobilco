@@ -20,18 +20,34 @@
             android:text="@string/login_textbox"
             android:textSize="24sp"
             android:layout_gravity="center"
-            android:layout_marginTop = "200dp"/>
+            android:layout_marginTop = "150dp"/>
 
+        <TextView
+            android:id="@+id/EmailTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/email_title"
+            android:textSize="16sp"
+            android:layout_gravity="center"
+            android:layout_marginTop = "50dp"/>
         <EditText
             android:id="@+id/editTextTextEmailAddress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop = "50dp"
+
             android:ems="10"
             android:inputType="textEmailAddress"
             android:hint = "@string/email_hint"/>
 
+        <TextView
+            android:id="@+id/PasswordTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/password_title"
+            android:textSize="16sp"
+            android:layout_gravity="center"
+            android:layout_marginTop = "10dp"/>
         <EditText
             android:id="@+id/editTextTextPassword"
             android:layout_width="wrap_content"

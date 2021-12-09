@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "839869074578",
+    "project_id": "mobilco-761fc",
+    "storage_bucket": "mobilco-761fc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:839869074578:android:446d469fdecdd852f2ea4b",
+        "android_client_info": {
+          "package_name": "com.example.fitlane"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "839869074578-juqh1hbejftkobrg8jfesjhjslsjvare.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQWEl3i0CRykJjQA6BV9GCUg3q0Q3puVQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "839869074578-juqh1hbejftkobrg8jfesjhjslsjvare.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:839869074578:android:bd02f53b1fe659ccf2ea4b",
+        "android_client_info": {
+          "package_name": "com.example.mobilco"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "839869074578-juqh1hbejftkobrg8jfesjhjslsjvare.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQWEl3i0CRykJjQA6BV9GCUg3q0Q3puVQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "839869074578-juqh1hbejftkobrg8jfesjhjslsjvare.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -9,15 +9,19 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
+import androidx.navigation.ui.setupWithNavController
+
 //Thoes are for the search array function
 import android.widget.ArrayAdapter
 import android.widget.ListView
 import android.widget.SearchView
 import android.widget.Toast
 // end
+
 import android.view.Window
 import android.view.WindowManager
 import com.example.fitlane.databinding.ActivityMainBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
 
@@ -41,6 +45,11 @@ class MainActivity : AppCompatActivity() {
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show()
         } */
+
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_nav_view)
+        val bottomNavController = findNavController(R.id.bottom_nav_fragment)
+
+        bottomNavigationView.setupWithNavController(bottomNavController)
 
         /* setContentView(R.layout.create_meal)
 
@@ -74,6 +83,7 @@ class MainActivity : AppCompatActivity() {
             }
 
         }) */
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

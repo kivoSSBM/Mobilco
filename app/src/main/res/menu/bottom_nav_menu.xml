@@ -3,12 +3,17 @@
 
     <item
         android:id="@+id/navigation_home"
-        android:icon="@drawable/ic_home_black_24dp"
+        android:icon="@drawable/ic_action_name"
         android:title="@string/title_workout"/>
 
     <item
-        android:id="@+id/navigation_nutrition"
-        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:id="@+id/navigation_dashboard"
+        android:icon="@drawable/ic_nutrition"
         android:title="@string/title_nutrition"/>
+
+    <item
+        android:id="@+id/navigation_notifications"
+        android:icon="@drawable/ic_settings"
+        android:title="@string/action_settings"/>
 
 </menu>

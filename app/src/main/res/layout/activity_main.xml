@@ -18,8 +18,5 @@
 
 
 
-    <include layout="@layout/nutrition_homepage" />
-
-
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

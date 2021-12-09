@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:theme="@style/Theme.Fitlane.AppBarOverlay">
 
-        <androidx.appcompat.widget.Toolbar
+      <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
@@ -52,9 +52,9 @@
         android:layout_marginEnd="@dimen/fab_margin"
         android:layout_marginBottom="90dp"
         android:background="@color/grey"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
+        app:srcCompat="@android:drawable/ic_dialog_email" />-->
 
-    <include layout="@layout/activity_bottom_navbar" />
--->
+    <!--<include layout="@layout/activity_bottom_navbar" />-->
+
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

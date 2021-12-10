@@ -28,9 +28,10 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.example.fitlane.Login"
-        android:label="@string/title_workout"
-        tools:layout="@layout/fragment_login" />
+        android:name="com.example.fitlane.Workout"
+        android:label="@string/title_profile"
+        tools:layout="@layout/workout_homepage"
+        />
 
     <fragment
         android:id="@+id/navigation_dashboard"
@@ -40,7 +41,8 @@
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.example.fitlane.ui.notifications.NotificationsFragment"
-        android:label="@string/title_profile"
-        tools:layout="@layout/fragment_notifications" />
+        android:name="com.example.fitlane.Login"
+        android:label="@string/title_workout"
+        tools:layout="@layout/fragment_login"
+         />
 </navigation>

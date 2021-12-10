@@ -10,6 +10,7 @@ import com.example.fitlane.databinding.FragmentFirstBinding
 
 import android.app.Service
 import android.content.Intent
+import android.content.IntentFilter
 
 import android.os.IBinder
 import com.example.fitlane.databinding.ActivityMainBinding
@@ -39,8 +40,9 @@ class FirstFragment : Fragment() {
         bindingA.TimerStart.setOnClickListener{startTimer()}
         bindingA.TimerReset.setOnClickListener{resetTimer()}
         bindingA.TimerStop.setOnClickListener{stopTimer()}
-        serviceIntent = Intent(applicationContext,TimerService::class.java)
-        registerReceiver(updateTime, In)
+        serviceIntent = Intent(applicationContext,TimeService::class.java)
+        registerReceiver(updateTime, IntentFilter(TimeService.TIMER_UPDATED))
+
     }
 
     private val updateTime: BroadcastReceiver = object : BroadcastReceiver()

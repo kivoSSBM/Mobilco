@@ -51,6 +51,7 @@ class MainActivity : AppCompatActivity() {
 
         bottomNavigationView.setupWithNavController(bottomNavController)
 
+        setContentView(R.layout.activity_exercise_categories)
         /* setContentView(R.layout.create_meal)
 
         val search = findViewById<SearchView>(R.id.searchView)

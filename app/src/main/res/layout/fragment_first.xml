@@ -9,39 +9,45 @@
     tools:context=".Login"
     android:orientation="vertical">
 
+    <TextView
+        android:id="@+id/timer"
+        android:layout_width = "wrap_content"
+        android:layout_height = "wrap_content"
+        android:text="@string/timer_value"
+        android:textSize="20sp"
+        android:padding="10dp"/>
 
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="horizontal">
 
-    <ImageButton
-        android:id="@+id/imageButton1"
+    <Button
+        android:id="@+id/Timer_start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:scaleX="5"
-        android:scaleY="5"
-        android:layout_marginTop="100dp"
-        android:src="@drawable/ic_action_name"
-
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="30dp"
+        android:text="@string/timer_start"
         tools:ignore="SpeakableTextPresentCheck" />
 
-    <ImageButton
-        android:id="@+id/imageButton2"
+    <Button
+        android:id="@+id/Timer_reset"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
-        android:src="@drawable/ic_nutrition"
-        android:scaleX="5"
-        android:scaleY="5"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/timer_reset"
         tools:ignore="SpeakableTextPresentCheck" />
-
-    <ImageButton
-        android:id="@+id/imageButton3"
+    <Button
+        android:id="@+id/Timer_stop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
-        android:layout_marginTop="150dp"
-        android:scaleX="5"
-        android:scaleY="5"
-        android:src="@drawable/ic_settings"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="30dp"
+        android:text="@string/timer_stop"
         tools:ignore="SpeakableTextPresentCheck" />
-    
+
+</LinearLayout>
+
 </LinearLayout>

@@ -11,8 +11,10 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.navigation.ui.setupWithNavController
 
-//Thoes are for the search array function
-// end
+import com.google.android.gms.tasks.OnCompleteListener
+import com.google.firebase.auth.AuthResult
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 
 import android.view.Window
 import android.view.WindowManager
@@ -20,12 +22,18 @@ import android.widget.*
 import androidx.navigation.fragment.findNavController
 import com.example.fitlane.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.FirebaseApp
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import org.w3c.dom.Text
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
+    private lateinit var auth: FirebaseAuth
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -85,24 +93,37 @@ class MainActivity : AppCompatActivity() {
             }
 
         }) */
-
+        auth = Firebase.auth
         val username = findViewById<TextView>(R.id.editTextTextEmailAddress)
         val password = findViewById<TextView>(R.id.editTextTextPassword)
 
-
         val loginbtn = findViewById<Button>(R.id.loginB)
+        loginbtn.setOnClickListener {
+            
+            auth.signInWithEmailAndPassword(username.text.toString(), password.text.toString())
+                .addOnCompleteListener(this) { task ->
+                    if (task.isSuccessful) {
+                        Toast.makeText(this, "Success!!", Toast.LENGTH_SHORT).show()
+                    } else {
+                        Toast.makeText(this, "Fail!!", Toast.LENGTH_SHORT).show()
+                    }
+                }
+        }
+
+        /*val loginbtn = findViewById<Button>(R.id.loginB)
         loginbtn.setOnClickListener{
             if(username.text.toString()=="admin" && password.text.toString()=="admin")
             {
                 //success
                 Toast.makeText(this,"Success",Toast.LENGTH_SHORT).show()
+                setContentView(R.layout.fragment_workout_scheduled) //change this to proper context switch
             }
             else
             {
                 //fail
                 Toast.makeText(this,"Fail",Toast.LENGTH_SHORT).show()
             }
-        }
+        }*/
     }
 
 

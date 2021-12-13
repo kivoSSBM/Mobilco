@@ -18,7 +18,7 @@
             android:textSize="30sp"
             android:textStyle="bold"
             android:textColor="@color/black"
-            android:text="Exercise one">
+            android:text="Exercise 1">
 
         </TextView>
     </LinearLayout>
@@ -43,7 +43,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="chest"
+            android:text="Master"
             android:textColor="@color/black"
             android:textSize="20dp"
             android:textStyle="bold"

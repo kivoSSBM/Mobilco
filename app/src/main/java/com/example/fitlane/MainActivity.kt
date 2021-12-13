@@ -12,16 +12,15 @@ import android.view.MenuItem
 import androidx.navigation.ui.setupWithNavController
 
 //Thoes are for the search array function
-import android.widget.ArrayAdapter
-import android.widget.ListView
-import android.widget.SearchView
-import android.widget.Toast
 // end
 
 import android.view.Window
 import android.view.WindowManager
+import android.widget.*
+import androidx.navigation.fragment.findNavController
 import com.example.fitlane.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import org.w3c.dom.Text
 
 class MainActivity : AppCompatActivity() {
 
@@ -52,7 +51,8 @@ class MainActivity : AppCompatActivity() {
         bottomNavigationView.setupWithNavController(bottomNavController)
 
         // setContentView(R.layout.fragment_exeercise_categories)
-        setContentView(R.layout.fragment_workout_scheduled)
+        //setContentView(R.layout.fragment_workout_scheduled)
+        setContentView(R.layout.fragment_login)
         /* setContentView(R.layout.create_meal)
 
         val search = findViewById<SearchView>(R.id.searchView)
@@ -86,7 +86,25 @@ class MainActivity : AppCompatActivity() {
 
         }) */
 
+        val username = findViewById<TextView>(R.id.editTextTextEmailAddress)
+        val password = findViewById<TextView>(R.id.editTextTextPassword)
+
+
+        val loginbtn = findViewById<Button>(R.id.loginB)
+        loginbtn.setOnClickListener{
+            if(username.text.toString()=="admin" && password.text.toString()=="admin")
+            {
+                //success
+                Toast.makeText(this,"Success",Toast.LENGTH_SHORT).show()
+            }
+            else
+            {
+                //fail
+                Toast.makeText(this,"Fail",Toast.LENGTH_SHORT).show()
+            }
+        }
     }
+
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.

@@ -95,7 +95,7 @@
 
 
         <Button
-            android:id="@+id/Skip"
+            android:id="@+id/skipB"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/rounded_btn"
@@ -105,7 +105,7 @@
             android:textColor="@color/white"/>
 
         <Button
-            android:id="@+id/login"
+            android:id="@+id/loginB"
             android:background="@drawable/rounded_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

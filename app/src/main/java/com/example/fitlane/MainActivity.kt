@@ -61,7 +61,9 @@ class MainActivity : AppCompatActivity() {
 
         // setContentView(R.layout.fragment_exeercise_categories)
         //setContentView(R.layout.fragment_workout_scheduled)
+
         setContentView(R.layout.fragment_login)
+
         /* setContentView(R.layout.create_meal)
 
         val search = findViewById<SearchView>(R.id.searchView)

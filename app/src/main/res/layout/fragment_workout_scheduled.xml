@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".exeercise_categories">
+    tools:context=".workout_scheduled">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:gravity="center_horizontal|center_vertical"
-            android:text="Exercise Categories"
+            android:text="Exercise Scheduled"
             android:textColor="@color/black"
             android:textSize="30sp"
             android:textStyle="bold">
@@ -38,79 +38,83 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:layout_marginTop="10dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="30dp"
             android:background="@color/grey">
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="chest"
+                android:text="Workout 1"
                 android:textColor="@color/black"
                 android:textSize="20dp"
                 android:textStyle="bold"
                 android:textAllCaps="true"
-                android:gravity="center_vertical|center_horizontal">
+                android:gravity="center_vertical"
+                android:paddingStart="20dp">
             </Button>
 
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="50dp"
             android:layout_marginTop="10dp"
             android:background="@color/grey">
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="back"
+                android:text="Workout 2"
                 android:textColor="@color/black"
                 android:textSize="20dp"
                 android:textStyle="bold"
                 android:textAllCaps="true"
-                android:gravity="center_vertical|center_horizontal">
+                android:gravity="center_vertical"
+                android:paddingStart="20dp">
             </Button>
 
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="50dp"
             android:layout_marginTop="10dp"
             android:background="@color/grey">
+
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="arms"
+                android:gravity="center_vertical"
+                android:paddingStart="20dp"
+                android:text="Workout 3"
+                android:textAllCaps="true"
                 android:textColor="@color/black"
                 android:textSize="20dp"
-                android:textStyle="bold"
-                android:textAllCaps="true"
-                android:gravity="center_vertical|center_horizontal">
-            </Button>
+                android:textStyle="bold"></Button>
 
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="50dp"
             android:layout_marginTop="10dp"
             android:background="@color/grey">
+
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:paddingStart="20dp"
                 android:text="shoulders"
+                android:textAllCaps="true"
                 android:textColor="@color/black"
                 android:textSize="20dp"
-                android:textStyle="bold"
-                android:textAllCaps="true"
-                android:gravity="center_vertical|center_horizontal">
-            </Button>
+                android:textStyle="bold"></Button>
 
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="50dp"
             android:layout_marginTop="10dp"
             android:background="@color/grey">
             <Button
@@ -121,14 +125,15 @@
                 android:textSize="20dp"
                 android:textStyle="bold"
                 android:textAllCaps="true"
-                android:gravity="center_vertical|center_horizontal">
+                android:gravity="center_vertical"
+                android:paddingStart="20dp">
             </Button>
 
         </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="50dp"
             android:layout_marginTop="10dp"
             android:background="@color/grey">
             <Button
@@ -139,7 +144,8 @@
                 android:textSize="20dp"
                 android:textStyle="bold"
                 android:textAllCaps="true"
-                android:gravity="center_vertical|center_horizontal">
+                android:gravity="center_vertical"
+                android:paddingStart="20dp">
             </Button>
 
         </RelativeLayout>

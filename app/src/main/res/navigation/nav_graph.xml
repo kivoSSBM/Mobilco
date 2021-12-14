@@ -41,8 +41,7 @@
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.example.fitlane.Login"
-        android:label="@string/title_workout"
-        tools:layout="@layout/fragment_login"
-         />
+        android:name="com.example.fitlane.CreateMeal"
+        android:label="@string/title_profile"
+        tools:layout="@layout/create_meal" />
 </navigation>

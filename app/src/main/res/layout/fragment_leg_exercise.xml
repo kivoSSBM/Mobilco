@@ -6,20 +6,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".exeercise_categories">
+    tools:context=".leg_exercise">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_margin="5dp">
+        android:layout_margin="5dp"
+        android:gravity="center_vertical|center_horizontal"
+        >
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:gravity="center_horizontal|center_vertical"
-            android:text="Exercise Categories"
+            android:text="Leg exercises"
             android:textColor="@color/black"
             android:textSize="30sp"
             android:textStyle="bold">
@@ -37,14 +39,14 @@
         </LinearLayout>
 
         <RelativeLayout
-            android:layout_width="match_parent"
+            android:layout_width="300dp"
             android:layout_height="150dp"
             android:layout_marginTop="10dp"
             android:background="@color/grey">
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="chest"
+                android:text="Exercise 1"
                 android:textColor="@color/black"
                 android:textSize="20dp"
                 android:textStyle="bold"
@@ -55,14 +57,14 @@
         </RelativeLayout>
 
         <RelativeLayout
-            android:layout_width="match_parent"
+            android:layout_width="300dp"
             android:layout_height="150dp"
             android:layout_marginTop="10dp"
             android:background="@color/grey">
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="back"
+                android:text="Exercise 2"
                 android:textColor="@color/black"
                 android:textSize="20dp"
                 android:textStyle="bold"
@@ -73,14 +75,14 @@
         </RelativeLayout>
 
         <RelativeLayout
-            android:layout_width="match_parent"
+            android:layout_width="300dp"
             android:layout_height="150dp"
             android:layout_marginTop="10dp"
             android:background="@color/grey">
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="arms"
+                android:text="Exercise 3"
                 android:textColor="@color/black"
                 android:textSize="20dp"
                 android:textStyle="bold"
@@ -91,14 +93,14 @@
         </RelativeLayout>
 
         <RelativeLayout
-            android:layout_width="match_parent"
+            android:layout_width="300dp"
             android:layout_height="150dp"
             android:layout_marginTop="10dp"
             android:background="@color/grey">
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="shoulders"
+                android:text="Exercise 4"
                 android:textColor="@color/black"
                 android:textSize="20dp"
                 android:textStyle="bold"
@@ -109,14 +111,14 @@
         </RelativeLayout>
 
         <RelativeLayout
-            android:layout_width="match_parent"
+            android:layout_width="300dp"
             android:layout_height="150dp"
             android:layout_marginTop="10dp"
             android:background="@color/grey">
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="legs"
+                android:text="Exercise 5"
                 android:textColor="@color/black"
                 android:textSize="20dp"
                 android:textStyle="bold"
@@ -127,14 +129,14 @@
         </RelativeLayout>
 
         <RelativeLayout
-            android:layout_width="match_parent"
+            android:layout_width="300dp"
             android:layout_height="150dp"
             android:layout_marginTop="10dp"
             android:background="@color/grey">
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="abdominals"
+                android:text="Exercise 6"
                 android:textColor="@color/black"
                 android:textSize="20dp"
                 android:textStyle="bold"

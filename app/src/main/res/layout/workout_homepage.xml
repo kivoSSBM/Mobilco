@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity"
+    tools:context=".Workout"
     >
 
     <androidx.fragment.app.FragmentContainerView
@@ -19,174 +19,28 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:navGraph="@navigation/nav_graph" />
-    <LinearLayout
+
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:orientation="vertical"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/box_workout_history">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal|center_vertical"
+        android:text="Workout Home Page"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold">
+    </TextView>
 
-        <TextView
-            android:layout_marginTop="15dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@color/Black"
-            android:textSize="20sp"
-            android:text="@string/history_head"
-            android:paddingLeft="20dp"
-            />
-
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal" >
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:text="@string/exercise"
-                android:textColor="@color/Black"
-                android:textSize="16sp"
-                android:layout_marginLeft="20dp"
-                android:layout_gravity="left"/>
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:text="@string/sets"
-                android:textColor="@color/Black"
-                android:textSize="16sp"
-                android:layout_gravity="left"/>
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal" >
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:text="@string/squat"
-                android:textColor="@color/Black"
-                android:textSize="16sp"
-                android:layout_marginLeft="20dp"
-                android:layout_gravity="left"/>
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:text="@string/sets4"
-                android:textColor="@color/Black"
-                android:textSize="16sp"
-                android:layout_gravity="left"/>
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal" >
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:text="@string/deadligt"
-                android:textColor="@color/Black"
-                android:textSize="16sp"
-                android:layout_marginLeft="20dp"
-                android:layout_gravity="left"/>
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:text="@string/sets4"
-                android:textColor="@color/Black"
-                android:textSize="16sp"
-                android:layout_gravity="left"/>
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal" >
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:text="@string/legpress"
-                android:textColor="@color/Black"
-                android:textSize="16sp"
-                android:layout_marginLeft="20dp"
-                android:layout_gravity="left"/>
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:text="@string/sets3"
-                android:textColor="@color/Black"
-                android:textSize="16sp"
-                android:layout_gravity="left"/>
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal" >
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:text="@string/legcurl"
-                android:textColor="@color/Black"
-                android:textSize="16sp"
-                android:layout_marginLeft="20dp"
-                android:layout_gravity="left"/>
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:text="@string/sets3"
-                android:textColor="@color/Black"
-                android:textSize="16sp"
-                android:layout_gravity="left"/>
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal" >
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:text="@string/calf"
-                android:textColor="@color/Black"
-                android:textSize="16sp"
-                android:layout_marginLeft="20dp"
-                android:layout_gravity="left"/>
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:text="@string/sets4"
-                android:textColor="@color/Black"
-                android:textSize="16sp"
-                android:layout_gravity="left"/>
-
-        </LinearLayout>
-
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <View
+            android:layout_width="360dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="12dp"
+            android:background="@color/darkgrey"/>
     </LinearLayout>
 
     <LinearLayout
@@ -359,7 +213,177 @@
 
     </LinearLayout>
 
-  <!--  <Button
+   <!-- <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:orientation="vertical"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/box_workout_history">
+
+        <TextView
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/Black"
+            android:textSize="20sp"
+            android:text="@string/history_head"
+            android:paddingLeft="20dp"
+            />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="@string/exercise"
+                android:textColor="@color/Black"
+                android:textSize="16sp"
+                android:layout_marginLeft="20dp"
+                android:layout_gravity="left"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="@string/sets"
+                android:textColor="@color/Black"
+                android:textSize="16sp"
+                android:layout_gravity="left"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="@string/squat"
+                android:textColor="@color/Black"
+                android:textSize="16sp"
+                android:layout_marginLeft="20dp"
+                android:layout_gravity="left"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="@string/sets4"
+                android:textColor="@color/Black"
+                android:textSize="16sp"
+                android:layout_gravity="left"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="@string/deadligt"
+                android:textColor="@color/Black"
+                android:textSize="16sp"
+                android:layout_marginLeft="20dp"
+                android:layout_gravity="left"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="@string/sets4"
+                android:textColor="@color/Black"
+                android:textSize="16sp"
+                android:layout_gravity="left"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="@string/legpress"
+                android:textColor="@color/Black"
+                android:textSize="16sp"
+                android:layout_marginLeft="20dp"
+                android:layout_gravity="left"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="@string/sets3"
+                android:textColor="@color/Black"
+                android:textSize="16sp"
+                android:layout_gravity="left"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="@string/legcurl"
+                android:textColor="@color/Black"
+                android:textSize="16sp"
+                android:layout_marginLeft="20dp"
+                android:layout_gravity="left"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="@string/sets3"
+                android:textColor="@color/Black"
+                android:textSize="16sp"
+                android:layout_gravity="left"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="@string/calf"
+                android:textColor="@color/Black"
+                android:textSize="16sp"
+                android:layout_marginLeft="20dp"
+                android:layout_gravity="left"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="@string/sets4"
+                android:textColor="@color/Black"
+                android:textSize="16sp"
+                android:layout_gravity="left"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
         android:id="@+id/testButton"
         android:text="New exercise"
         android:layout_width="match_parent"
@@ -368,11 +392,11 @@
 
    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/testBtn"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_marginEnd="@dimen/fab_margin"
-        android:layout_marginBottom="130dp"
+        android:layout_marginBottom="@dimen/fab_margin"
         android:src="@drawable/ic_plus"
         android:contentDescription="@string/newwrokout"
        app:backgroundTint="@color/LightGrey"/>

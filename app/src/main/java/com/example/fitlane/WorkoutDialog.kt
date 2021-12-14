@@ -15,7 +15,7 @@ class WorkoutDialog : DialogFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val rootView: View = inflater.inflate(R.layout.fragment_dialog, container, false)
+        var rootView: View = inflater.inflate(R.layout.fragment_dialog, container)
 
         return rootView
     }

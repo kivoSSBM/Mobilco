@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".MainActivity">
-
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -29,6 +26,18 @@
     </LinearLayout>
 
     <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <View
+            android:layout_width="360dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="12dp"
+            android:background="@color/darkgrey"/>
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp">
@@ -36,16 +45,15 @@
 
         android:id="@+id/outlinedTextField"
         android:layout_width="240dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        >
+        android:layout_height="60dp"
+        android:layout_marginStart="10dp">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/create_meal_input"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/custom_background"
-            />
+            android:layout_height="45dp"
+            android:textAlignment="center"
+            android:background="@drawable/custom_background" />
 
     </com.google.android.material.textfield.TextInputLayout>
         <View
@@ -60,7 +68,9 @@
             android:id="@+id/create_meal_btn"
             android:layout_height="60dp"
             android:layout_width="120dp"
-            android:text="Create" />
+            android:text="Create"
+            android:background="@drawable/rounded_btn"
+            android:textColor="@color/White"/>
 
     </LinearLayout>
 

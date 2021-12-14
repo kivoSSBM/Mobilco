@@ -34,7 +34,7 @@
     <string name="title_activity_bottom_navbar">BottomNavbar</string>
     <string name="title_workout">Workout</string>
     <string name="title_nutrition">Nutrition</string>
-    <string name="title_profile">Profile</string>
+    <string name="title_profile">Settings</string>
 
 
     <!-- Timer stuff-->
@@ -42,4 +42,19 @@
     <string name="timer_start">Start</string>
     <string name="timer_reset">Reset</string>
     <string name="timer_stop">Stop</string>
+
+
+    <!-- Workout stuff -->
+    <string name="history_head"><u>Workout 15/7–2021</u></string>
+    <string name="exercise"><b>Exercise:</b></string>
+    <string name="sets"><b>Sets:</b></string>
+    <string name="squat">Squat</string>
+    <string name="deadligt">Deadlift</string>
+    <string name="legpress">Legpress</string>
+    <string name="legcurl">LegCurl</string>
+    <string name="calf">Calf</string>
+    <string name="sets3">3</string>
+    <string name="sets4">4</string>
+
+
 </resources>

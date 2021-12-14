@@ -9,6 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Fitlane">
+        <activity
+            android:name=".ExerciseCategories"
+            android:exported="false" />
         <service
             android:name=".TimeService"
             android:enabled="true"

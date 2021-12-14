@@ -1,6 +1,7 @@
 package com.example.fitlane
 
 import android.os.Bundle
+import android.text.TextUtils
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -94,36 +95,69 @@ class MainActivity : AppCompatActivity() {
 
         }) */
         auth = Firebase.auth
-        val username = findViewById<TextView>(R.id.editTextTextEmailAddress)
-        val password = findViewById<TextView>(R.id.editTextTextPassword)
 
+        val regbtn = findViewById<TextView>(R.id.sign_up)
+        regbtn.setOnClickListener{
+            val username:String = findViewById<TextView>(R.id.editTextTextEmailAddress).text.toString().trim(){it<= ' '}
+            val password:String = findViewById<TextView>(R.id.editTextTextPassword).text.toString().trim(){it<= ' '}
+
+            when
+            {
+                TextUtils.isEmpty(username) ->
+                {
+                    val t: String = "enter user-- "
+                    val text:String = t+username
+                    Toast.makeText(this, text, Toast.LENGTH_SHORT).show()
+                }
+                TextUtils.isEmpty(password) ->
+                {
+                    Toast.makeText(this, "Enter pw", Toast.LENGTH_SHORT).show()
+                }
+            else ->
+            {
+                FirebaseAuth.getInstance().createUserWithEmailAndPassword(username, password)
+                    .addOnCompleteListener() { task ->
+                        if (task.isSuccessful)
+                        {
+                            val firebaseUser: FirebaseUser = task.result!!.user!!
+                            Toast.makeText(this, "Success Register!!", Toast.LENGTH_SHORT).show()
+                        }
+                        else
+                        {
+                            val f:String = "Fail Reg, to short password or invalid email"
+                            //val text = f+username
+
+                            Toast.makeText(this, f, Toast.LENGTH_SHORT).show()
+                        }
+                    }
+            }
+            }
+        }
         val loginbtn = findViewById<Button>(R.id.loginB)
         loginbtn.setOnClickListener {
-            
-            auth.signInWithEmailAndPassword(username.text.toString(), password.text.toString())
+            val username:String = findViewById<TextView>(R.id.editTextTextEmailAddress).text.toString().trim(){it<= ' '}
+            val password:String = findViewById<TextView>(R.id.editTextTextPassword).text.toString().trim(){it<= ' '}
+
+            auth.signInWithEmailAndPassword(username, password)
                 .addOnCompleteListener(this) { task ->
-                    if (task.isSuccessful) {
-                        Toast.makeText(this, "Success!!", Toast.LENGTH_SHORT).show()
-                    } else {
+                    if (task.isSuccessful)
+                    {
+                        val firebaseUser: FirebaseUser = task.result!!.user!!
+                        Toast.makeText(this, "Success Login!!", Toast.LENGTH_SHORT).show()
+                        setContentView(R.layout.fragment_workout_scheduled)
+                    }
+                    else
+                    {
                         Toast.makeText(this, "Fail!!", Toast.LENGTH_SHORT).show()
                     }
                 }
         }
 
-        /*val loginbtn = findViewById<Button>(R.id.loginB)
-        loginbtn.setOnClickListener{
-            if(username.text.toString()=="admin" && password.text.toString()=="admin")
-            {
-                //success
-                Toast.makeText(this,"Success",Toast.LENGTH_SHORT).show()
-                setContentView(R.layout.fragment_workout_scheduled) //change this to proper context switch
-            }
-            else
-            {
-                //fail
-                Toast.makeText(this,"Fail",Toast.LENGTH_SHORT).show()
-            }
+        /*val logoffbtn = findViewById<Button>(R.id.logoutB)
+        loginbtn.setOnClickListener {
+            auth.signOut()
         }*/
+
     }
 
 

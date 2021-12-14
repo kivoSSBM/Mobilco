@@ -78,8 +78,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="@string/link_to_sign_up"
-            android:orientation="vertical"/>
+            android:text="@string/link_to_sign_up"/>
 
     </LinearLayout>
 

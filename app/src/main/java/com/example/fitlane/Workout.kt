@@ -55,6 +55,7 @@ class Workout : Fragment() {
         binding.testBtn.setOnClickListener {
             var mDialog = WorkoutDialog()
 
+
             mDialog.show(childFragmentManager, "TestTag")
 
         }

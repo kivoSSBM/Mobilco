@@ -139,9 +139,13 @@ class MainActivity : AppCompatActivity() {
             val password:String = findViewById<TextView>(R.id.editTextTextPassword).text.toString().trim(){it<= ' '}
             when
             {
+                TextUtils.isEmpty(username) && TextUtils.isEmpty(password) ->
+                {
+                    Toast.makeText(this, "enter email and password", Toast.LENGTH_SHORT).show()
+                }
                 TextUtils.isEmpty(username) ->
                 {
-                    Toast.makeText(this, "enter user", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "enter email", Toast.LENGTH_SHORT).show()
                 }
                 TextUtils.isEmpty(password) ->
                 {

@@ -33,7 +33,6 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
-    private lateinit var auth: FirebaseAuth
 
 
 
@@ -97,91 +96,11 @@ class MainActivity : AppCompatActivity() {
             }
 
         }) */
-        auth = Firebase.auth
 
-        val regbtn = findViewById<TextView>(R.id.sign_up)
-        regbtn.setOnClickListener{
-            val username:String = findViewById<TextView>(R.id.editTextTextEmailAddress).text.toString().trim(){it<= ' '}
-            val password:String = findViewById<TextView>(R.id.editTextTextPassword).text.toString().trim(){it<= ' '}
-            when
-            {
-                TextUtils.isEmpty(username) ->
-                {
-                    val t: String = "enter user"
-                    val text:String = t+username
-                    Toast.makeText(this, text, Toast.LENGTH_SHORT).show()
-                }
-                TextUtils.isEmpty(password) ->
-                {
-                    Toast.makeText(this, "Enter password", Toast.LENGTH_SHORT).show()
-                }
-                else ->
-                {
-                    FirebaseAuth.getInstance().createUserWithEmailAndPassword(username, password)
-                        .addOnCompleteListener() { task ->
-                            if (task.isSuccessful)
-                            {
-                                val firebaseUser: FirebaseUser = task.result!!.user!!
-                                Toast.makeText(this, "Success Register!!", Toast.LENGTH_SHORT).show()
-                            }
-                            else
-                            {
-                                val f:String = "Fail Reg, to short password or invalid email"
-                                Toast.makeText(this, f, Toast.LENGTH_SHORT).show()
-                            }
-                        }
-                }
-            }
-        }
-        val loginbtn = findViewById<Button>(R.id.loginB)
-        loginbtn.setOnClickListener {
-            val username:String = findViewById<TextView>(R.id.editTextTextEmailAddress).text.toString().trim(){it<= ' '}
-            val password:String = findViewById<TextView>(R.id.editTextTextPassword).text.toString().trim(){it<= ' '}
-            when
-            {
-                TextUtils.isEmpty(username) && TextUtils.isEmpty(password) ->
-                {
-                    Toast.makeText(this, "enter email and password", Toast.LENGTH_SHORT).show()
-                }
-                TextUtils.isEmpty(username) ->
-                {
-                    Toast.makeText(this, "enter email", Toast.LENGTH_SHORT).show()
-                }
-                TextUtils.isEmpty(password) ->
-                {
-                    Toast.makeText(this, "Enter password", Toast.LENGTH_SHORT).show()
-                }
-                else->
-                {
-                    auth.signInWithEmailAndPassword(username, password)
-                        .addOnCompleteListener(this) { task ->
-                            if (task.isSuccessful)
-                            {
-                                val firebaseUser: FirebaseUser = task.result!!.user!!
-                                Toast.makeText(this, "Success Login!!", Toast.LENGTH_SHORT).show()
-                                /* val intent = Intent(this@MainActivity,MainActivity::class.java)
-                                 intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-                                 intent.putExtra("user_id",firebaseUser.uid)
-                                 intent.putExtra("email_id",username)
-         *                        */
-                                //findNavController().navigate(R.id.action_Login_to_Menu)
-                                //setContentView(R.layout.fragment_workout_scheduled)
 
-                            }
-                            else
-                            {
-                                Toast.makeText(this, "Fail!!", Toast.LENGTH_SHORT).show()
-                            }
-                        }
-                }
-            }
 
-        }
 
-        /*val logoffbtn = findViewById<Button>(R.id.logoutB)
-        loginbtn.setOnClickListener {
-            auth.signOut()
-        }*/
+
 
 
 

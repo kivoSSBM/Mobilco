@@ -118,6 +118,7 @@
             android:layout_marginTop="10dp"
             android:background="@color/grey">
             <Button
+                android:id="@+id/WorkoutSchedule_legs"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="legs"
@@ -149,7 +150,16 @@
             </Button>
 
         </RelativeLayout>
-
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/new_work_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginEnd="@dimen/fab_margin"
+            android:layout_marginBottom="@dimen/fab_margin"
+            android:src="@drawable/ic_plus"
+            android:contentDescription="@string/newwrokout"
+            app:backgroundTint="@color/LightGrey"/>
 
     </LinearLayout>
 

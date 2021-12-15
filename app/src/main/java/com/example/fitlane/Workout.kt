@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.FragmentManager
+import androidx.navigation.fragment.findNavController
 import com.example.fitlane.databinding.ActivityMainBinding
 import com.example.fitlane.databinding.WorkoutHomepageBinding
 
@@ -42,7 +43,7 @@ class Workout : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         _binding = WorkoutHomepageBinding.inflate(inflater, container, false)
         // Inflate the layout for this fragment
@@ -53,10 +54,12 @@ class Workout : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.testBtn.setOnClickListener {
+
+            findNavController().navigate(R.id.action_start_new_work)
+
             var mDialog = WorkoutDialog()
 
-
-            mDialog.show(childFragmentManager, "TestTag")
+            mDialog.show(childFragmentManager, "workoutDialog")
 
         }
     }

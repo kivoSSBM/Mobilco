@@ -44,6 +44,7 @@
             android:layout_marginTop="10dp"
             android:background="@color/grey">
             <Button
+                android:id="@+id/exercise_one_btn"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="Exercise 1"

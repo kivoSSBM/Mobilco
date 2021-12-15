@@ -55,6 +55,10 @@
     <string name="calf">Calf</string>
     <string name="sets3">3</string>
     <string name="sets4">4</string>
+    <string name="create_workout">Create Workout</string>
+    <string name="newwrokout"><b>New Workout</b></string>
+    <string name="quickTrain">Quick Workout</string>
+    <string name="enter_workout_name">Enter workout name</string>
 
 
 </resources>

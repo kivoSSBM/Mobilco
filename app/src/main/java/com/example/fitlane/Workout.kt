@@ -1,10 +1,16 @@
 package com.example.fitlane
 
+import android.app.AlertDialog
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.FragmentManager
+import androidx.navigation.fragment.findNavController
+import com.example.fitlane.databinding.ActivityMainBinding
+import com.example.fitlane.databinding.WorkoutHomepageBinding
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -21,21 +27,43 @@ class Workout : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    private var _binding: WorkoutHomepageBinding? = null
+    private val binding get() = _binding!!
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+
     }
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
+
+        _binding = WorkoutHomepageBinding.inflate(inflater, container, false)
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.workout_homepage, container, false)
+        return _binding!!.root
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.testBtn.setOnClickListener {
+
+            findNavController().navigate(R.id.action_start_new_work)
+
+            var mDialog = WorkoutDialog()
+
+            mDialog.show(childFragmentManager, "workoutDialog")
+
+        }
+    }
+
 
     companion object {
         /**

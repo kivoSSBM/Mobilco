@@ -1,5 +1,6 @@
 package com.example.fitlane
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
 import com.google.android.material.snackbar.Snackbar
@@ -62,7 +63,7 @@ class MainActivity : AppCompatActivity() {
         // setContentView(R.layout.fragment_exeercise_categories)
         //setContentView(R.layout.fragment_workout_scheduled)
 
-        setContentView(R.layout.fragment_login)
+        //setContentView(R.layout.fragment_login)
 
         /* setContentView(R.layout.create_meal)
 
@@ -102,63 +103,87 @@ class MainActivity : AppCompatActivity() {
         regbtn.setOnClickListener{
             val username:String = findViewById<TextView>(R.id.editTextTextEmailAddress).text.toString().trim(){it<= ' '}
             val password:String = findViewById<TextView>(R.id.editTextTextPassword).text.toString().trim(){it<= ' '}
-
             when
             {
                 TextUtils.isEmpty(username) ->
                 {
-                    val t: String = "enter user-- "
+                    val t: String = "enter user"
                     val text:String = t+username
                     Toast.makeText(this, text, Toast.LENGTH_SHORT).show()
                 }
                 TextUtils.isEmpty(password) ->
                 {
-                    Toast.makeText(this, "Enter pw", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Enter password", Toast.LENGTH_SHORT).show()
                 }
-            else ->
-            {
-                FirebaseAuth.getInstance().createUserWithEmailAndPassword(username, password)
-                    .addOnCompleteListener() { task ->
-                        if (task.isSuccessful)
-                        {
-                            val firebaseUser: FirebaseUser = task.result!!.user!!
-                            Toast.makeText(this, "Success Register!!", Toast.LENGTH_SHORT).show()
+                else ->
+                {
+                    FirebaseAuth.getInstance().createUserWithEmailAndPassword(username, password)
+                        .addOnCompleteListener() { task ->
+                            if (task.isSuccessful)
+                            {
+                                val firebaseUser: FirebaseUser = task.result!!.user!!
+                                Toast.makeText(this, "Success Register!!", Toast.LENGTH_SHORT).show()
+                            }
+                            else
+                            {
+                                val f:String = "Fail Reg, to short password or invalid email"
+                                Toast.makeText(this, f, Toast.LENGTH_SHORT).show()
+                            }
                         }
-                        else
-                        {
-                            val f:String = "Fail Reg, to short password or invalid email"
-                            //val text = f+username
-
-                            Toast.makeText(this, f, Toast.LENGTH_SHORT).show()
-                        }
-                    }
-            }
+                }
             }
         }
         val loginbtn = findViewById<Button>(R.id.loginB)
         loginbtn.setOnClickListener {
             val username:String = findViewById<TextView>(R.id.editTextTextEmailAddress).text.toString().trim(){it<= ' '}
             val password:String = findViewById<TextView>(R.id.editTextTextPassword).text.toString().trim(){it<= ' '}
-
-            auth.signInWithEmailAndPassword(username, password)
-                .addOnCompleteListener(this) { task ->
-                    if (task.isSuccessful)
-                    {
-                        val firebaseUser: FirebaseUser = task.result!!.user!!
-                        Toast.makeText(this, "Success Login!!", Toast.LENGTH_SHORT).show()
-                        setContentView(R.layout.fragment_workout_scheduled)
-                    }
-                    else
-                    {
-                        Toast.makeText(this, "Fail!!", Toast.LENGTH_SHORT).show()
-                    }
+            when
+            {
+                TextUtils.isEmpty(username) ->
+                {
+                    Toast.makeText(this, "enter user", Toast.LENGTH_SHORT).show()
                 }
+                TextUtils.isEmpty(password) ->
+                {
+                    Toast.makeText(this, "Enter password", Toast.LENGTH_SHORT).show()
+                }
+                else->
+                {
+                    auth.signInWithEmailAndPassword(username, password)
+                        .addOnCompleteListener(this) { task ->
+                            if (task.isSuccessful)
+                            {
+                                val firebaseUser: FirebaseUser = task.result!!.user!!
+                                Toast.makeText(this, "Success Login!!", Toast.LENGTH_SHORT).show()
+                                /* val intent = Intent(this@MainActivity,MainActivity::class.java)
+                                 intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                                 intent.putExtra("user_id",firebaseUser.uid)
+                                 intent.putExtra("email_id",username)
+         *                        */
+                                //findNavController().navigate(R.id.action_Login_to_Menu)
+                                //setContentView(R.layout.fragment_workout_scheduled)
+
+                            }
+                            else
+                            {
+                                Toast.makeText(this, "Fail!!", Toast.LENGTH_SHORT).show()
+                            }
+                        }
+                }
+            }
+
         }
 
         /*val logoffbtn = findViewById<Button>(R.id.logoutB)
         loginbtn.setOnClickListener {
             auth.signOut()
         }*/
+
+
+
+
+
+
 
     }
 

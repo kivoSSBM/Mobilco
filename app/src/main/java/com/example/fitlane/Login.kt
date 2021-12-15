@@ -1,10 +1,12 @@
 package com.example.fitlane
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.example.fitlane.databinding.FragmentLoginBinding
 
@@ -47,10 +49,17 @@ class Login : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        Log.d("text", "on view created login")
+        binding.loginB.setOnClickListener {
+        //findNavController()
+
+        Toast.makeText(activity, "hi", Toast.LENGTH_SHORT).show()
+    }
 
         binding.skipB.setOnClickListener{
             findNavController().navigate(R.id.action_Login_to_Menu)
-        }}
+        }
+    }
 
     companion object {
         /**

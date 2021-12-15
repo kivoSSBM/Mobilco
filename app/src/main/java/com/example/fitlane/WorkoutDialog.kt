@@ -25,10 +25,10 @@ class WorkoutDialog : DialogFragment() {
     ): View {
         _binding = FragmentDialogBinding.inflate(inflater, container, false)
 
-       // var rootView: View = inflater.inflate(R.layout.fragment_dialog, container, false)
+        // var rootView: View = inflater.inflate(R.layout.fragment_dialog, container, false)
 
         return binding.root
-       // return rootView
+        // return rootView
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

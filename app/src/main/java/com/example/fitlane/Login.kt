@@ -47,8 +47,10 @@ class Login : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
-        binding.skipB.setOnClickListener{
+        binding.login.setOnClickListener{
+            findNavController().navigate(R.id.action_Login_to_Menu)
+        }
+        binding.Skip.setOnClickListener{
             findNavController().navigate(R.id.action_Login_to_Menu)
         }}
 

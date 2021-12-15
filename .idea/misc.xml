@@ -12,16 +12,11 @@
         <entry key="..\:/Users/alexa/Documents/Mobilco/app/src/main/res/drawable/rounded_btn.xml" value="0.2703125" />
         <entry key="..\:/Users/alexa/Documents/Mobilco/app/src/main/res/drawable/rounded_calories.xml" value="0.2703125" />
         <entry key="..\:/Users/alexa/Documents/Mobilco/app/src/main/res/layout/activity_main.xml" value="0.19746376811594202" />
-        <entry key="..\:/Users/alexa/Documents/Mobilco/app/src/main/res/layout/create_meal.xml" value="0.13020833333333334" />
         <entry key="..\:/Users/alexa/Documents/Mobilco/app/src/main/res/layout/fragment_dialog.xml" value="0.13020833333333334" />
-        <entry key="..\:/Users/alexa/Documents/Mobilco/app/src/main/res/layout/fragment_exeercise_categories.xml" value="0.13020833333333334" />
-        <entry key="..\:/Users/alexa/Documents/Mobilco/app/src/main/res/layout/fragment_exercise_one.xml" value="0.1" />
-        <entry key="..\:/Users/alexa/Documents/Mobilco/app/src/main/res/layout/fragment_leg_daily_workout.xml" value="0.13020833333333334" />
-        <entry key="..\:/Users/alexa/Documents/Mobilco/app/src/main/res/layout/fragment_leg_exercise.xml" value="0.1" />
-        <entry key="..\:/Users/alexa/Documents/Mobilco/app/src/main/res/layout/fragment_second.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/alexa/Documents/Mobilco/app/src/main/res/layout/fragment_exercise_one.xml" value="0.13020833333333334" />
         <entry key="..\:/Users/alexa/Documents/Mobilco/app/src/main/res/layout/fragment_start_workout.xml" value="0.13020833333333334" />
-        <entry key="..\:/Users/alexa/Documents/Mobilco/app/src/main/res/layout/fragment_workout_one.xml" value="0.1" />
-        <entry key="..\:/Users/alexa/Documents/Mobilco/app/src/main/res/layout/fragment_workout_scheduled.xml" value="0.1" />
+        <entry key="..\:/Users/alexa/Documents/Mobilco/app/src/main/res/layout/fragment_workout_one.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/alexa/Documents/Mobilco/app/src/main/res/layout/fragment_workout_scheduled.xml" value="0.13020833333333334" />
         <entry key="..\:/Users/alexa/Documents/Mobilco/app/src/main/res/layout/workout_homepage.xml" value="0.1" />
       </map>
     </option>

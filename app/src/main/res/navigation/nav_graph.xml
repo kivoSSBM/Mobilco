@@ -5,12 +5,15 @@
     android:id="@+id/nav_graph"
     app:startDestination="@id/Login">
 
+
+
+
+
     <fragment
         android:id="@+id/Login"
         android:name="com.example.fitlane.Login"
         android:label="@string/workout_label"
         tools:layout="@layout/fragment_login">
-
         <action
             android:id="@+id/action_Login_to_Menu"
             app:destination="@id/Menu" />
@@ -45,10 +48,13 @@
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.example.fitlane.com.example.fitlane.Settings"
+        android:name="com.example.fitlane.Settings"
         android:label="@string/title_profile"
-        tools:layout="@layout/Settings" />
-
+        tools:layout="@layout/fragment_settings" >
+    <action
+        android:id="@+id/action_logout"
+        app:destination="@id/Login"/>
+    </fragment>
 
     <fragment
         android:id="@+id/WorkoutDialog"

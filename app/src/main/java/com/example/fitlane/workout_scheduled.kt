@@ -55,22 +55,9 @@ class workout_scheduled : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         Log.d("text", "on view created workout schedule")
-        Toast.makeText( getActivity(), "hej", Toast.LENGTH_SHORT).show()
+        //Toast.makeText( getActivity(), "hej", Toast.LENGTH_SHORT).show()
        /* binding.abdominalsB.setOnClickListener{
 
-            val userS:String = FirebaseAuth.getInstance().currentUser?.uid.toString()
-            val emailS:String = FirebaseAuth.getInstance().currentUser?.email.toString()
-            //val aghil =
-            var textS:String = "info:\n"
-            //textS+= userS+"\n"
-            //textS+= emailS+"\n"
-            Toast.makeText( getActivity(), textS, Toast.LENGTH_SHORT).show()
-            //print("aaaaa\n")
-            //println("bbbb\n")
-            //Log.d("text,""aa")
-            Log.d("text", "aaaa")
-            var t:Button = view.findViewById(R.id.abdominalsB)
-            t.text= ("aaaa")
 
 
         }*/

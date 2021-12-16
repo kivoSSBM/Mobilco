@@ -46,6 +46,7 @@
         app:menu="@menu/bottom_nav_menu"
         app:itemTextColor="@color/black"/>
 
+
     <!--<com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"

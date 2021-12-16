@@ -1,15 +1,18 @@
 package com.example.fitlane
 
-import android.app.AlertDialog
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.FragmentManager
+import android.widget.Button
+import android.widget.TextView
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
-import com.example.fitlane.databinding.ActivityMainBinding
-import com.example.fitlane.databinding.WorkoutHomepageBinding
+import com.example.fitlane.R
+import com.example.fitlane.databinding.FragmentSettingsBinding
+import com.google.firebase.auth.FirebaseAuth
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -19,15 +22,15 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [Workout.newInstance] factory method to
+ * Use the [Settings.newInstance] factory method to
  * create an instance of this fragment.
  */
-class Workout : Fragment() {
+class Settings : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
 
-    private var _binding: WorkoutHomepageBinding? = null
+    private var _binding: FragmentSettingsBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -45,7 +48,19 @@ class Workout : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        _binding = WorkoutHomepageBinding.inflate(inflater, container, false)
+        _binding = FragmentSettingsBinding.inflate(inflater, container, false)
+
+
+
+        binding.settingLogoutBtn.setOnClickListener {
+            Toast.makeText(activity, "Logging out..", Toast.LENGTH_SHORT).show()
+            //if(FirebaseAuth.getInstance().currentUser?.email.toString()!="null")
+            //{
+            FirebaseAuth.getInstance().signOut()
+            //}
+
+            findNavController().navigate(R.id.action_logout)
+        }
         // Inflate the layout for this fragment
         return _binding!!.root
     }
@@ -53,15 +68,15 @@ class Workout : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.testBtn.setOnClickListener {
+        //Toast.makeText( activity, "hej", Toast.LENGTH_SHORT).show()
 
-            findNavController().navigate(R.id.action_start_new_work)
+        val userS:String = FirebaseAuth.getInstance().currentUser?.uid.toString()
+        val emailS:String = FirebaseAuth.getInstance().currentUser?.email.toString()
 
-           // var mDialog = WorkoutDialog()
-
-            //mDialog.show(childFragmentManager, "workoutDialog")
-
-        }
+        var userID_TV: TextView = view.findViewById(R.id.user_id)
+        userID_TV.text= userS
+        var userEmail_TV: TextView = view.findViewById(R.id.user_email)
+        userEmail_TV.text= emailS
     }
 
 
@@ -72,12 +87,12 @@ class Workout : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment Workout.
+         * @return A new instance of fragment Settings.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            Workout().apply {
+            Settings().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)

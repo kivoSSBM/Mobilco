@@ -5,12 +5,15 @@
     android:id="@+id/nav_graph"
     app:startDestination="@id/Login">
 
+
+
+
+
     <fragment
         android:id="@+id/Login"
         android:name="com.example.fitlane.Login"
         android:label="@string/workout_label"
         tools:layout="@layout/fragment_login">
-
         <action
             android:id="@+id/action_Login_to_Menu"
             app:destination="@id/Menu" />
@@ -29,9 +32,13 @@
     <fragment
         android:id="@+id/navigation_home"
         android:name="com.example.fitlane.Workout"
-        android:label="@string/title_profile"
+        android:label="@string/workout_label"
         tools:layout="@layout/workout_homepage"
-        />
+        >
+        <action
+            android:id="@+id/action_start_new_work"
+            app:destination="@id/WorkoutSchedule" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_dashboard"
@@ -62,8 +69,84 @@
 
     <fragment
         android:id="@+id/navigation_notifications"
-        android:name="com.example.fitlane.CreateMeal"
+        android:name="com.example.fitlane.Settings"
         android:label="@string/title_profile"
-        tools:layout="@layout/create_meal" />
+        tools:layout="@layout/fragment_settings" >
+    <action
+        android:id="@+id/action_logout"
+        app:destination="@id/Login"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/WorkoutDialog"
+        android:name="com.example.fitlane.WorkoutDialog"
+        android:label="wokrout_dialog"
+        tools:layout="@layout/fragment_dialog">
+        <action
+            android:id="@+id/action_select_workout_one"
+            app:destination="@id/exercise_Categories" />
+    </fragment>
+    <fragment
+        android:id="@+id/workoutOne"
+        android:name="com.example.fitlane.workout_one"
+        android:label="workoutOne"
+        tools:layout="@layout/fragment_workout_one">
+
+    </fragment>
+    <fragment
+        android:id="@+id/WorkoutSchedule"
+        android:name="com.example.fitlane.workout_scheduled"
+        android:label="workout_schedule"
+        tools:layout="@layout/fragment_workout_scheduled">
+        <action
+            android:id="@+id/action_select_workout_one"
+            app:destination="@id/WorkoutDialog" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/exercise_Categories"
+        android:name="com.example.fitlane.exeercise_categories"
+        android:label="workout_schedule"
+        tools:layout="@layout/fragment_exeercise_categories">
+        <action
+            android:id="@+id/action_workout_legs"
+            app:destination="@id/legs_category" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/legs_category"
+        android:name="com.example.fitlane.leg_exercise"
+        android:label="workout_schedule"
+        tools:layout="@layout/fragment_leg_exercise">
+        <action
+            android:id="@+id/action_select_exercises_one"
+            app:destination="@id/exercise_one" />
+    </fragment>
+    <fragment
+        android:id="@+id/exercise_one"
+        android:name="com.example.fitlane.exercise_one"
+        android:label="workout_schedule"
+        tools:layout="@layout/fragment_exercise_one">
+        <action
+            android:id="@+id/action_add_exercises"
+            app:destination="@id/workout_before_start" />
+    </fragment>
+    <fragment
+        android:id="@+id/workout_before_start"
+        android:name="com.example.fitlane.workout_one"
+        android:label="workout_schedule"
+        tools:layout="@layout/fragment_workout_one">
+        <action
+            android:id="@+id/action_start"
+            app:destination="@id/workout_started"/>
+    </fragment>
+    <fragment
+        android:id="@+id/workout_started"
+        android:name="com.example.fitlane.start_workout"
+        android:label="workout_schedule"
+        tools:layout="@layout/fragment_start_workout">
+
+    </fragment>
+
 
 </navigation>

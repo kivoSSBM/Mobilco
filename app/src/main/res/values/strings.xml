@@ -10,7 +10,8 @@
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 
-
+    <!--  Settings stuff -->
+    <string name="logout_button">Log out</string>
     <!--  Log in stuff-->
 
     <string name="login_textbox">Welcome! Please Log in or Sign up.</string>

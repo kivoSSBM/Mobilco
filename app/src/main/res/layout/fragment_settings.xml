@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Settings"
-    >
+    tools:context=".Settings">
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/settings_navigation"
@@ -50,6 +49,7 @@
         android:layout_marginTop="30dp"
         android:background="@drawable/box_workout_history">
         <TextView
+            android:id="@+id/user_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -68,6 +68,7 @@
         android:layout_marginTop="10dp"
         android:background="@drawable/box_workout_history">
         <TextView
+            android:id="@+id/user_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -90,7 +91,7 @@
                 android:layout_marginTop="60dp"
                 android:background="@drawable/rounded_btn"
                 android:gravity="center"
-                android:text="Log out"
+                android:text="@string/logout_button"
                 android:textColor="@color/white"/>
 
 

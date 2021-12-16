@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.FragmentTransaction
 import androidx.navigation.fragment.findNavController
 import com.example.fitlane.databinding.NutritionHomepageBinding
@@ -36,10 +37,41 @@ class Nutrition : Fragment(R.layout.nutrition_homepage) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         readCalories()
+
+
+
+
+
         binding.accept.setOnClickListener {
-            goalWeight()
-            readCalories()
+            val input = binding.currHeight.text.toString().trim()
+            val input1 = binding.currWeight.text.toString().trim()
+            val input2 = binding.goalWeight.text.toString().trim()
+            if (input.isNullOrBlank() || input2.isNullOrBlank() || input1.isNullOrBlank()) {
+                Toast.makeText(getActivity(), "Empty Fields!", Toast.LENGTH_SHORT).show();
+            }
+
+            else{
+                goalWeight()
+                readCalories()
+            }
+
         }
+
+
+
+
+        binding.addMeal.setOnClickListener(){
+
+            findNavController().navigate(R.id.go_to_create_meal)
+        }
+
+                         
+        
+
+
+
+
+
 
     }
 
@@ -59,7 +91,7 @@ class Nutrition : Fragment(R.layout.nutrition_homepage) {
         val currHeight = binding.currHeight.text.toString().toInt()
         val currWeight = binding.currWeight.text.toString().toInt()
         val gWeight = binding.goalWeight.text.toString().toInt()
-        val neededCalories = currHeight + currWeight + gWeight
+        val neededCalories = (currHeight * 4) + (currWeight * 25) + (gWeight * 5)
         val db = FirebaseFirestore.getInstance()
         val goal: MutableMap<String, Any> = HashMap()
         goal["currHeight"] = currHeight
@@ -76,7 +108,7 @@ class Nutrition : Fragment(R.layout.nutrition_homepage) {
         db.collection("calories").document("goal")
             .get().addOnSuccessListener { document ->
                 if(document != null){
-                    binding.dailyCalories.text = document.getDouble("neededCalories").toString()
+                    binding.dailyCalories.text = document.getLong("neededCalories").toString()
                 }
             }
             .addOnFailureListener { exception ->

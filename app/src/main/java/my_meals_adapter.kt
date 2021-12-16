@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.Button
 import android.widget.ListView
 import android.widget.TextView
 
@@ -16,9 +17,10 @@ class my_meals_adapter(var mCtx: Context, var resources:Int, var items:List<my_m
         val meal_title:TextView = view.findViewById(R.id.meal_title)
         val meal_desc:TextView = view.findViewById(R.id.meal_description)
 
+
         val myItems:my_meals_model = items[position]
         meal_title.text = myItems.title
-        meal_desc.text = myItems.description
+        meal_desc.text = myItems.description.toString()
 
         return view
     }

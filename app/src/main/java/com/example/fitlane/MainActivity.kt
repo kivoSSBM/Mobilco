@@ -3,14 +3,13 @@ package com.example.fitlane
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
+import android.view.*
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
-import android.view.Menu
-import android.view.MenuItem
 import androidx.navigation.ui.setupWithNavController
 
 import com.google.android.gms.tasks.OnCompleteListener
@@ -18,8 +17,6 @@ import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 
-import android.view.Window
-import android.view.WindowManager
 import android.widget.*
 import androidx.navigation.fragment.findNavController
 import com.example.fitlane.databinding.ActivityMainBinding
@@ -28,17 +25,27 @@ import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import org.w3c.dom.Text
+import java.lang.Math.abs
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), GestureDetector.OnGestureListener {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
 
+    lateinit var gestureDetector: GestureDetector
+    var x1:Float = 0.0f
+    var x2:Float = 0.0f
+    var y1:Float = 0.0f
+    var y2:Float = 0.0f
 
+    companion object {
+        const val MIN_DISTANCE = 50
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        gestureDetector = GestureDetector(this, this)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -105,6 +112,51 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    override fun onTouchEvent(event: MotionEvent?): Boolean {
+        gestureDetector.onTouchEvent(event)
+
+        when (event?.action) {
+            //Start swipe
+            0->
+            {
+               x1 = event.x
+               y1 = event.y
+            }
+
+            //End of Swipe
+            1->
+            {
+                x2 = event.x
+                y2 = event.y
+
+                val valueX:Float = x2-x1
+                val valueY:Float = y2-y1
+
+                if(kotlin.math.abs(valueX) > MIN_DISTANCE)
+                {
+                    if (x2 > x1) {
+                        supportFragmentManager.popBackStack()
+                    }
+                    else {
+                        Toast.makeText(this, "Right swipe", Toast.LENGTH_SHORT).show()
+                    }
+                }
+                else if(kotlin.math.abs(valueY) > MIN_DISTANCE)
+                {
+                    if (y1 > y2) {
+                        Toast.makeText(this, "Top swipe", Toast.LENGTH_SHORT).show()
+                    }
+                    else {
+                        Toast.makeText(this, "Bottom swipe", Toast.LENGTH_SHORT).show()
+                    }
+                }
+            }
+        }
+
+        return super.onTouchEvent(event)
+    }
+
+
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -126,5 +178,44 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         return navController.navigateUp(appBarConfiguration)
                 || super.onSupportNavigateUp()
+    }
+
+    override fun onDown(e: MotionEvent?): Boolean {
+       // TODO("Not yet implemented")
+        return true
+    }
+
+    override fun onShowPress(e: MotionEvent?) {
+      //  TODO("Not yet implemented")
+
+    }
+
+    override fun onSingleTapUp(e: MotionEvent?): Boolean {
+       // TODO("Not yet implemented")
+        return true
+    }
+
+    override fun onScroll(
+        e1: MotionEvent?,
+        e2: MotionEvent?,
+        distanceX: Float,
+        distanceY: Float
+    ): Boolean {
+       // TODO("Not yet implemented")
+        return true
+    }
+
+    override fun onLongPress(e: MotionEvent?) {
+      //  TODO("Not yet implemented")
+    }
+
+    override fun onFling(
+        e1: MotionEvent?,
+        e2: MotionEvent?,
+        velocityX: Float,
+        velocityY: Float
+    ): Boolean {
+      //  TODO("Not yet implemented")
+        return true
     }
 }

@@ -68,7 +68,7 @@ class Settings : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        Toast.makeText( activity, "hej", Toast.LENGTH_SHORT).show()
+        //Toast.makeText( activity, "hej", Toast.LENGTH_SHORT).show()
 
         val userS:String = FirebaseAuth.getInstance().currentUser?.uid.toString()
         val emailS:String = FirebaseAuth.getInstance().currentUser?.email.toString()

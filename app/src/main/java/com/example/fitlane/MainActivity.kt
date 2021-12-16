@@ -1,9 +1,11 @@
 package com.example.fitlane
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.*
+import android.view.inputmethod.InputMethodManager
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
@@ -112,6 +114,7 @@ class MainActivity : AppCompatActivity(), GestureDetector.OnGestureListener {
 
     }
 
+
     override fun onTouchEvent(event: MotionEvent?): Boolean {
         gestureDetector.onTouchEvent(event)
 
@@ -156,6 +159,16 @@ class MainActivity : AppCompatActivity(), GestureDetector.OnGestureListener {
         return super.onTouchEvent(event)
     }
 
+    /*
+    fun closeKeyboard(view: View)
+    {
+        if(view!=null)
+        {
+            val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            imm.hideSoftInputFromWindow(view.windowToken,0)
+        }
+        window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN)
+    }*/
 
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

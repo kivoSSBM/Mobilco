@@ -1,5 +1,6 @@
 package com.example.fitlane
 
+import android.content.Context
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
@@ -7,9 +8,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.EditorInfo
+import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.content.ContextCompat.getSystemService
 import androidx.navigation.fragment.findNavController
 import com.example.fitlane.databinding.FragmentLoginBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -51,7 +55,7 @@ class Login : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         auth = Firebase.auth
 
-        //val regbtn = findViewById<TextView>(R.id.sign_up)
+
         binding.signUp.setOnClickListener{
             val username:String = view.findViewById<TextView>(R.id.editTextTextEmailAddress).text.toString().trim(){it<= ' '}
             val password:String = view.findViewById<TextView>(R.id.editTextTextPassword).text.toString().trim(){it<= ' '}
@@ -76,6 +80,7 @@ class Login : Fragment() {
                         {
                             val firebaseUser: FirebaseUser = task.result!!.user!!
                             Toast.makeText(activity, "Success Register!!", Toast.LENGTH_SHORT).show()
+                            closeKeyboard(view)
                         }
                         else
                         {
@@ -118,6 +123,7 @@ class Login : Fragment() {
                             //findNavController().navigate(R.id.action_Login_to_Menu)
                             //setContentView(R.layout.fragment_workout_scheduled)
                             findNavController().navigate(R.id.action_Login_to_Menu)
+                            closeKeyboard(view)
 
                         }
                         else
@@ -135,14 +141,28 @@ class Login : Fragment() {
         binding.forgorPassword.setOnClickListener {
             Toast.makeText(activity, "You forgot?? Too bad!!", Toast.LENGTH_SHORT).show()
         }
+        binding.or.setOnClickListener {
+            Toast.makeText(activity, "testing closing keyboard..", Toast.LENGTH_SHORT).show()
+            closeKeyboard(view)
+        }
 
-        /*val logoffbtn = findViewById<Button>(R.id.logoutB)
+
+        /*
+        val logoffbtn = findViewById<Button>(R.id.logoutB)
         loginbtn.setOnClickListener {
             Toast.makeText(activity, "Logging out..", Toast.LENGTH_SHORT).show()
             auth.signOut()
         }*/
     }
+    fun closeKeyboard(view:View)
+    {
+        if(view!=null)
+        {
+            val imm = activity?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            imm.hideSoftInputFromWindow(view.windowToken,0)
+        }
 
+    }
     companion object {
         /**
          * Use this factory method to create a new instance of

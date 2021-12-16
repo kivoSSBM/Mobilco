@@ -1,16 +1,17 @@
 package com.example.fitlane
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
+import android.view.*
+import android.view.inputmethod.InputMethodManager
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
-import android.view.Menu
-import android.view.MenuItem
 import androidx.navigation.ui.setupWithNavController
 
 import com.google.android.gms.tasks.OnCompleteListener
@@ -18,8 +19,6 @@ import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 
-import android.view.Window
-import android.view.WindowManager
 import android.widget.*
 import androidx.navigation.fragment.findNavController
 import com.example.fitlane.databinding.ActivityMainBinding
@@ -105,6 +104,16 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    /*
+    fun closeKeyboard(view: View)
+    {
+        if(view!=null)
+        {
+            val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            imm.hideSoftInputFromWindow(view.windowToken,0)
+        }
+        window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN)
+    }*/
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.

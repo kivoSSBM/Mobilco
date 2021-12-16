@@ -78,7 +78,7 @@ class Login : Fragment() {
                     auth.createUserWithEmailAndPassword(username, password).addOnCompleteListener() { task ->
                         if (task.isSuccessful)
                         {
-                            val firebaseUser: FirebaseUser = task.result!!.user!!
+                            //val firebaseUser: FirebaseUser = task.result!!.user!!
                             Toast.makeText(activity, "Success Register!!", Toast.LENGTH_SHORT).show()
                             closeKeyboard(view)
                         }
@@ -113,7 +113,7 @@ class Login : Fragment() {
                     auth.signInWithEmailAndPassword(username, password).addOnCompleteListener() { task ->
                         if (task.isSuccessful)
                         {
-                            val firebaseUser: FirebaseUser = task.result!!.user!!
+                            //val firebaseUser: FirebaseUser = task.result!!.user!!
                             Toast.makeText(activity, "Success Loooogin!!", Toast.LENGTH_SHORT).show()
                             /*
                             val intent = Intent(this@MainActivity,MainActivity::class.java)
@@ -147,12 +147,7 @@ class Login : Fragment() {
         }
 
 
-        /*
-        val logoffbtn = findViewById<Button>(R.id.logoutB)
-        loginbtn.setOnClickListener {
-            Toast.makeText(activity, "Logging out..", Toast.LENGTH_SHORT).show()
-            auth.signOut()
-        }*/
+
     }
     private fun closeKeyboard(view:View)
     {

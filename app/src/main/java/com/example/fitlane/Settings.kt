@@ -1,12 +1,18 @@
-package com.example.fitlane.com.example.fitlane
+package com.example.fitlane
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.TextView
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
+import com.example.fitlane.R
 import com.example.fitlane.databinding.FragmentSettingsBinding
+import com.google.firebase.auth.FirebaseAuth
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -43,6 +49,18 @@ class Settings : Fragment() {
     ): View {
 
         _binding = FragmentSettingsBinding.inflate(inflater, container, false)
+
+
+
+        binding.settingLogoutBtn.setOnClickListener {
+            Toast.makeText(activity, "Logging out..", Toast.LENGTH_SHORT).show()
+            //if(FirebaseAuth.getInstance().currentUser?.email.toString()!="null")
+            //{
+            FirebaseAuth.getInstance().signOut()
+            //}
+
+            findNavController().navigate(R.id.action_logout)
+        }
         // Inflate the layout for this fragment
         return _binding!!.root
     }
@@ -50,6 +68,15 @@ class Settings : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        Toast.makeText( activity, "hej", Toast.LENGTH_SHORT).show()
+
+        val userS:String = FirebaseAuth.getInstance().currentUser?.uid.toString()
+        val emailS:String = FirebaseAuth.getInstance().currentUser?.email.toString()
+
+        var userID_TV: TextView = view.findViewById(R.id.user_id)
+        userID_TV.text= userS
+        var userEmail_TV: TextView = view.findViewById(R.id.user_email)
+        userEmail_TV.text= emailS
     }
 
 

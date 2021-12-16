@@ -56,7 +56,7 @@ class workout_scheduled : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         Log.d("text", "on view created workout schedule")
         Toast.makeText( getActivity(), "hej", Toast.LENGTH_SHORT).show()
-        binding.abdominalsB.setOnClickListener{
+       /* binding.abdominalsB.setOnClickListener{
 
             val userS:String = FirebaseAuth.getInstance().currentUser?.uid.toString()
             val emailS:String = FirebaseAuth.getInstance().currentUser?.email.toString()
@@ -72,9 +72,10 @@ class workout_scheduled : Fragment() {
             var t:Button = view.findViewById(R.id.abdominalsB)
             t.text= ("aaaa")
 
-            binding.newWorkBtn.setOnClickListener {
-                findNavController().navigate(R.id.action_select_workout_one)
-            }
+
+        }*/
+        binding.newWorkBtn.setOnClickListener {
+            findNavController().navigate(R.id.action_select_workout_one)
         }
 
     }

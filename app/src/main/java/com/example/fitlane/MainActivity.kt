@@ -104,17 +104,6 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    /*
-    fun closeKeyboard(view: View)
-    {
-        if(view!=null)
-        {
-            val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-            imm.hideSoftInputFromWindow(view.windowToken,0)
-        }
-        window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN)
-    }*/
-
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.menu_main, menu)

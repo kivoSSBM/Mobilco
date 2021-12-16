@@ -115,13 +115,13 @@ class Login : Fragment() {
                         {
                             val firebaseUser: FirebaseUser = task.result!!.user!!
                             Toast.makeText(activity, "Success Loooogin!!", Toast.LENGTH_SHORT).show()
-                            /* val intent = Intent(this@MainActivity,MainActivity::class.java)
+                            /*
+                            val intent = Intent(this@MainActivity,MainActivity::class.java)
                              intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                              intent.putExtra("user_id",firebaseUser.uid)
                              intent.putExtra("email_id",username)
-     *                        */
-                            //findNavController().navigate(R.id.action_Login_to_Menu)
-                            //setContentView(R.layout.fragment_workout_scheduled)
+                             */
+
                             findNavController().navigate(R.id.action_Login_to_Menu)
                             closeKeyboard(view)
 

@@ -37,11 +37,33 @@
         android:id="@+id/navigation_dashboard"
         android:name="com.example.fitlane.Nutrition"
         android:label="@string/title_nutrition"
-        tools:layout="@layout/nutrition_homepage" />
+        tools:layout="@layout/nutrition_homepage">
+        <action
+            android:id="@+id/go_to_create_meal"
+            app:destination="@id/add_meal_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/add_meal_fragment"
+        android:name="com.example.fitlane.CreateMeal"
+        android:label="@string/nutrition_label"
+        tools:layout="@layout/fragment_first">
+        <action
+        android:id="@+id/go_to_add_item"
+        app:destination="@id/add_item" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/add_item"
+        android:name="com.example.fitlane.AddItems"
+        android:label="@string/title_profile"
+        tools:layout="@layout/fragment_add_items" />
+
 
     <fragment
         android:id="@+id/navigation_notifications"
         android:name="com.example.fitlane.CreateMeal"
         android:label="@string/title_profile"
         tools:layout="@layout/create_meal" />
+
 </navigation>

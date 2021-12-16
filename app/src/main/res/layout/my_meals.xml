@@ -5,22 +5,41 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <Button
+        android:id="@+id/delete_meal"
+        android:layout_marginBottom="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/white"
+        android:background="@drawable/rounded_btn_red"
+        android:text="Delete Meal"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center_horizontal|center_vertical"
-        android:layout_marginTop="10dp"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        android:text="MY MEALS">
 
-    </TextView>
+
+
+
+        <TextView
+            android:id="@+id/something"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal|center_vertical"
+            android:layout_marginTop="10dp"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:text="MY MEALS">
+
+        </TextView>
+
+
+
     </LinearLayout>
 
     <LinearLayout
@@ -34,5 +53,26 @@
             android:layout_marginStart="12dp"
             android:background="@color/darkgrey"/>
     </LinearLayout>
+
+    <Button
+        android:id="@+id/add_item"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/white"
+        android:background="@drawable/rounded_btn"
+        android:text="Add Item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+    <ListView
+        android:layout_marginTop="50dp"
+        android:id="@+id/my_meals_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </ListView>
+
+
 
 </LinearLayout>

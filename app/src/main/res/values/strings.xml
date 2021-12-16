@@ -11,7 +11,7 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 
     <!--  Settings stuff -->
-    <string name="logout_button">Log out</string>
+    <string name="logout_button">Log out \n (Back to Login)</string>
     <!--  Log in stuff-->
 
     <string name="login_textbox">Welcome! Please Log in or Sign up.</string>

@@ -46,7 +46,7 @@
                 android:layout_height="match_parent"
                 android:text="Workout 1"
                 android:textColor="@color/black"
-                android:textSize="20dp"
+                android:textSize="20sp"
                 android:textStyle="bold"
                 android:textAllCaps="true"
                 android:gravity="center_vertical"
@@ -65,7 +65,7 @@
                 android:layout_height="match_parent"
                 android:text="Workout 2"
                 android:textColor="@color/black"
-                android:textSize="20dp"
+                android:textSize="20sp"
                 android:textStyle="bold"
                 android:textAllCaps="true"
                 android:gravity="center_vertical"
@@ -79,7 +79,6 @@
             android:layout_height="50dp"
             android:layout_marginTop="10dp"
             android:background="@color/grey">
-
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -89,7 +88,8 @@
                 android:textAllCaps="true"
                 android:textColor="@color/black"
                 android:textSize="20dp"
-                android:textStyle="bold"></Button>
+                android:textStyle="bold">
+            </Button>
 
         </RelativeLayout>
 
@@ -108,7 +108,8 @@
                 android:textAllCaps="true"
                 android:textColor="@color/black"
                 android:textSize="20dp"
-                android:textStyle="bold"></Button>
+                android:textStyle="bold">
+            </Button>
 
         </RelativeLayout>
 
@@ -118,6 +119,7 @@
             android:layout_marginTop="10dp"
             android:background="@color/grey">
             <Button
+                android:id="@+id/WorkoutSchedule_legs"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="legs"
@@ -137,11 +139,12 @@
             android:layout_marginTop="10dp"
             android:background="@color/grey">
             <Button
+                android:id="@+id/abdominalsB"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="abdominals"
                 android:textColor="@color/black"
-                android:textSize="20dp"
+                android:textSize="20sp"
                 android:textStyle="bold"
                 android:textAllCaps="true"
                 android:gravity="center_vertical"
@@ -149,7 +152,16 @@
             </Button>
 
         </RelativeLayout>
-
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/new_work_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginEnd="@dimen/fab_margin"
+            android:layout_marginBottom="@dimen/fab_margin"
+            android:src="@drawable/ic_plus"
+            android:contentDescription="@string/newwrokout"
+            app:backgroundTint="@color/LightGrey"/>
 
     </LinearLayout>
 

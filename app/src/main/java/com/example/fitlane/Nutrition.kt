@@ -1,59 +1,93 @@
 package com.example.fitlane
 
+import android.app.Activity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.FragmentTransaction
+import androidx.navigation.fragment.findNavController
+import com.example.fitlane.databinding.NutritionHomepageBinding
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.ktx.Firebase
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [Nutrition.newInstance] factory method to
- * create an instance of this fragment.
- */
-class Nutrition : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+
+
+class Nutrition : Fragment(R.layout.nutrition_homepage) {
+  
+    private var _binding : NutritionHomepageBinding? = null
+    private val binding get() = _binding!!
+
+  
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.nutrition_homepage, container, false)
+        _binding = NutritionHomepageBinding.inflate(inflater, container, false)
+        return  binding.root
+        
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment Nutrition.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            Nutrition().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        readCalories()
+        binding.accept.setOnClickListener {
+            goalWeight()
+            readCalories()
+        }
+
+    }
+
+
+
+
+
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
+    }
+
+
+
+    private fun goalWeight(){
+        val currHeight = binding.currHeight.text.toString().toInt()
+        val currWeight = binding.currWeight.text.toString().toInt()
+        val gWeight = binding.goalWeight.text.toString().toInt()
+        val neededCalories = currHeight + currWeight + gWeight
+        val db = FirebaseFirestore.getInstance()
+        val goal: MutableMap<String, Any> = HashMap()
+        goal["currHeight"] = currHeight
+        goal["currWeight"] = currWeight
+        goal["goalWeight"] = gWeight
+        goal["neededCalories"] = neededCalories
+
+        db.collection("calories").document("goal").set(goal)
+    }
+
+
+    private fun readCalories(){
+        val db = FirebaseFirestore.getInstance()
+        db.collection("calories").document("goal")
+            .get().addOnSuccessListener { document ->
+                if(document != null){
+                    binding.dailyCalories.text = document.getDouble("neededCalories").toString()
                 }
             }
+            .addOnFailureListener { exception ->
+
+            }
+
     }
+
+
+
+
+
+
 }

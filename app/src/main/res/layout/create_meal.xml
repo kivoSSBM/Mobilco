@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -11,6 +12,7 @@
         android:orientation="horizontal">
 
         <TextView
+
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center_horizontal|center_vertical"
@@ -27,12 +29,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
-        <View
-            android:layout_width="360dp"
-            android:layout_height="2dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="12dp"
-            android:background="@color/darkgrey"/>
     </LinearLayout>
 
     <LinearLayout
@@ -40,12 +36,14 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp">
     <com.google.android.material.textfield.TextInputLayout
+
         android:id="@+id/outlinedTextField"
         android:layout_width="240dp"
         android:layout_height="60dp"
         android:layout_marginStart="10dp">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/create_meal_input"
             android:layout_width="match_parent"
             android:layout_height="45dp"
             android:textAlignment="center"
@@ -58,54 +56,21 @@
             android:layout_weight="1"
             />
         <Button
+            android:background="@drawable/rounded_btn"
             android:layout_marginStart="10dp"
-            android:id="@+id/create_meal"
-            android:layout_height="wrap_content"
+            android:id="@+id/create_meal_btn"
+            android:layout_height="60dp"
             android:layout_width="120dp"
             android:text="Create"
-            android:background="@drawable/rounded_btn"
             android:textColor="@color/White"/>
 
     </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <View
-            android:layout_width="380dp"
-            android:layout_height="2dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="12dp"
-            android:background="?attr/colorPrimary"/>
-    </LinearLayout>
 
-    <LinearLayout
+
+    <ListView
+        android:id="@+id/my_meals_list"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Example meal 1"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="5dp"
-            android:textColor="@color/black">
-        </TextView>
-        <View
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            />
-        <Button
-            android:layout_marginStart="10dp"
-            android:id="@+id/view"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:text="view"
-            android:background="@drawable/rounded_btn"
-            android:textColor="@color/White"
-            />
-    </LinearLayout>
+        android:layout_height="wrap_content">
+
+    </ListView>
 </LinearLayout>

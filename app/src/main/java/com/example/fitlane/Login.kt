@@ -154,12 +154,12 @@ class Login : Fragment() {
             auth.signOut()
         }*/
     }
-    fun closeKeyboard(view:View)
+    private fun closeKeyboard(view:View)
     {
-        if(view!=null)
+        if(view != null)
         {
-            val imm = activity?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-            imm.hideSoftInputFromWindow(view.windowToken,0)
+            val input = activity?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            input.hideSoftInputFromWindow(view.windowToken,0)
         }
 
     }

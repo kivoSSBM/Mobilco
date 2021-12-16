@@ -57,9 +57,9 @@ class Workout : Fragment() {
 
             findNavController().navigate(R.id.action_start_new_work)
 
-            var mDialog = WorkoutDialog()
+           // var mDialog = WorkoutDialog()
 
-            mDialog.show(childFragmentManager, "workoutDialog")
+            //mDialog.show(childFragmentManager, "workoutDialog")
 
         }
     }

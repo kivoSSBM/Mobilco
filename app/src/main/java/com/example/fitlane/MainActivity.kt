@@ -20,6 +20,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 
 import android.widget.*
+import androidx.fragment.app.FragmentManager
 import androidx.navigation.fragment.findNavController
 import com.example.fitlane.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -138,7 +139,9 @@ class MainActivity : AppCompatActivity(), GestureDetector.OnGestureListener {
                 if(kotlin.math.abs(valueX) > MIN_DISTANCE)
                 {
                     if (x2 > x1) {
-                        supportFragmentManager.popBackStack()
+
+                        onBackPressed()
+                        
                     }
                     else {
                         Toast.makeText(this, "Right swipe", Toast.LENGTH_SHORT).show()

@@ -137,6 +137,7 @@ class Login : Fragment() {
 
         binding.skipB.setOnClickListener{
             findNavController().navigate(R.id.action_Login_to_Menu)
+            closeKeyboard(view)
         }
         binding.forgorPassword.setOnClickListener {
             Toast.makeText(activity, "You forgot?? Too bad!!", Toast.LENGTH_SHORT).show()

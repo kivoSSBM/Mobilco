@@ -111,8 +111,6 @@
             android:layout_height="wrap_content"
             android:ems="5"
             android:textColor="@color/white"
-
-
             android:text="@string/login" />
 
 

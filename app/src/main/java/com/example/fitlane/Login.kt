@@ -140,7 +140,7 @@ class Login : Fragment() {
             closeKeyboard(view)
         }
         binding.forgorPassword.setOnClickListener {
-            Toast.makeText(activity, "You forgot?? Too bad!!", Toast.LENGTH_SHORT).show()
+            Toast.makeText(activity, "You forgot?? Too bad!! \nGet in contact with Admin", Toast.LENGTH_SHORT).show()
         }
         binding.or.setOnClickListener {
             Toast.makeText(activity, "testing closing keyboard..", Toast.LENGTH_SHORT).show()
